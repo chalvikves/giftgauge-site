@@ -48,6 +48,10 @@ restyle it.
 `sitemap.xml` and `robots.txt` are maintained by hand. Add new routes to the
 sitemap and bump `lastmod`.
 
+**The canonical host is `www.giftgauge.app`.** The bare domain 308-redirects to
+it, so canonical tags, the sitemap, and the robots sitemap line must all use
+`www`. Pointing them at the bare domain makes every canonical URL a redirect.
+
 Worth doing and not yet done: connect Google Search Console. The queries that
 show impressions with zero clicks are the cheapest wins, and the fix is usually
 rewriting the page title to match what people actually typed.
