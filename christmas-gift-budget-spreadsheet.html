@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christmas Gift Budget Spreadsheet: A Free Template You Can Copy</title>
+<meta name="description" content="A free Christmas gift budget spreadsheet template for Google Sheets or Excel, with the formulas written out. Five columns, four totals, and it tells you what is left.">
+<link rel="canonical" href="https://giftgauge.app/christmas-gift-budget-spreadsheet">
+<link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><img src="/icon.png" alt="">GiftGauge</a>
+    <nav>
+      <a href="/christmas-gift-tracker">Guides</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </header>
+
+  <main class="doc">
+    <h1>A free Christmas gift budget spreadsheet</h1>
+    <p class="updated">Updated September 2026</p>
+
+    <div class="lead">
+      <p><strong>Build it in five minutes.</strong> Make five columns: Person, Gift, Status, Planned, Spent. Add four totals underneath using the formulas below. That is the whole thing. It works in Google Sheets, Excel, and Numbers, it costs nothing, and the important part is the fourth total, which tells you what you would spend if you bought everything still on the list.</p>
+    </div>
+
+    <h2>The five columns</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>Person</td><td>Gift</td><td>Status</td><td>Planned</td><td>Spent</td></tr>
+          <tr><td><strong>2</strong></td><td>Mom</td><td>Spa voucher</td><td>Bought</td><td>90</td><td>90</td></tr>
+          <tr><td><strong>3</strong></td><td>Mom</td><td>Handwritten card</td><td>Idea</td><td>15</td><td></td></tr>
+          <tr><td><strong>4</strong></td><td>Dad</td><td>Headphones</td><td>Bought</td><td>180</td><td>172</td></tr>
+          <tr><td><strong>5</strong></td><td>Emma</td><td>Weekend trip</td><td>Idea</td><td>150</td><td></td></tr>
+        </tbody>
+      </table>
+      <caption>Put Planned in when you have the idea. Fill Spent in only once money has actually left your account.</caption>
+    </div>
+    <p>Keeping Planned and Spent apart is what makes the sheet worth having. One is a guess, the other is a fact, and totalling them together is how people end up confused about where they stand.</p>
+
+    <h2>The four totals</h2>
+    <p>Put these anywhere below your rows. They assume your data runs to row 200, so adjust the ranges if you have more.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>What it tells you</th><th>Formula</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Spent so far</strong></td>
+            <td><code>=SUM(E2:E200)</code></td>
+          </tr>
+          <tr>
+            <td><strong>Still to buy</strong></td>
+            <td><code>=SUMIF(C2:C200,"Idea",D2:D200)</code></td>
+          </tr>
+          <tr>
+            <td><strong>Projected total, if you buy everything</strong></td>
+            <td><code>=SUM(E2:E200)+SUMIF(C2:C200,"Idea",D2:D200)</code></td>
+          </tr>
+          <tr>
+            <td><strong>Left against your budget</strong></td>
+            <td><code>=500-SUM(E2:E200)</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <caption>Replace 500 with your actual budget, or point it at a cell holding the number.</caption>
+    </div>
+
+    <h2>Spend per person</h2>
+    <p>List your people down a spare column, say H2 onwards, then put this next to the first name and drag it down:</p>
+    <p><code>=SUMIF($A$2:$A$200,H2,$E$2:$E$200)</code></p>
+    <p>This is the total that tends to surprise people. Spending is almost never as even as you assume it is, and seeing it side by side usually changes next year's plan more than any budgeting advice does.</p>
+
+    <h2>Two touches worth the extra minute</h2>
+    <ol>
+      <li><strong>Make Status a dropdown.</strong> In Google Sheets, select column C, then Data, then Data validation, and add the three values Idea, Bought and Wrapped. Typing them by hand means one stray "bought" in lowercase quietly breaks every SUMIF on the page.</li>
+      <li><strong>Colour the projected total.</strong> Add a conditional format so it turns red when it goes over your budget. That single red cell in November is the entire point of the exercise.</li>
+    </ol>
+
+    <h2>Where the spreadsheet stops working</h2>
+    <p>Honestly, for a lot of people it does not, and if this template is enough then use it and ignore the rest of this page.</p>
+    <p>It tends to break in three specific places. The first is your phone, because you do your actual shopping standing in a shop, and pinching and zooming a cell with one hand while holding a basket is miserable. The second is next year, since most people start a fresh sheet each December and lose the record of what they gave. The third is remembering to open it at all, because a spreadsheet does not remind you that a birthday is in nine days.</p>
+
+    <div class="cta-row">
+      <p>GiftGauge is this spreadsheet as an app. Same idea of separating ideas from purchases, same projected total including ideas, plus a record per person across years and a widget so your next occasion sits on your home screen.</p>
+      <a class="cta" href="https://apps.apple.com/us/app/giftgauge-gift-list-budget/id6810361274"><img src="/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a>
+      <span class="cta-note">Free for up to three people, widget included. Pro is a one-time purchase, never a subscription.</span>
+    </div>
+
+    <h2>Can I just use a Google Sheets template someone else made?</h2>
+    <p>You can, and there are plenty. Two things to check before you commit a season to one. Does it separate planned from actual spending, because a lot of them do not. And does it total per person, because that is the number you will actually want in January. If it does neither, the five columns above will serve you better than something with nicer colours.</p>
+
+    <div class="more">
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/christmas-gift-tracker">How to keep track of Christmas gifts</a></li>
+        <li><a href="/how-to-budget-for-christmas-gifts">How to budget for Christmas gifts</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <a href="/christmas-gift-tracker">Guides</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/support">Support</a>
+      <a href="https://apps.apple.com/us/app/giftgauge-gift-list-budget/id6810361274">App Store</a>
+      <span class="copyright">&copy; 2026 GiftGauge</span>
+    </div>
+  </footer>
+</body>
+</html>

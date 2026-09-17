@@ -208,3 +208,59 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
   .reveal.d4 { animation-delay: 0.35s; }
   @keyframes rise { to { opacity: 1; transform: none; } }
 }
+
+/* Download call to action. Uses Apple's supplied App Store badge artwork
+   unaltered, at 54px tall (their web minimum is 40px) with clear space of at
+   least a quarter of the badge height around it, per Apple's marketing
+   guidelines. Do not restyle the badge itself. */
+.cta {
+  display: inline-block;
+  margin: 26px 14px 0;
+  line-height: 0;
+}
+.cta img { height: 54px; width: auto; display: block; }
+.cta:hover { opacity: 0.85; }
+.cta-note {
+  display: block;
+  margin-top: 14px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+.doc .cta { margin: 6px 14px 0; }
+.doc .cta-row {
+  margin: 26px 0 30px;
+  padding: 22px 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.doc .cta-row p { margin: 0 0 4px; color: var(--ink-2); }
+
+/* Steps and comparison tables inside content pages */
+.doc ol { padding-left: 22px; margin: 0 0 16px; }
+.doc ol li { margin: 10px 0; }
+.doc .table-wrap { overflow-x: auto; margin: 0 0 18px; }
+.doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 17px;
+}
+.doc th, .doc td {
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.doc th {
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 2px solid var(--border);
+}
+.doc td { color: var(--ink-2); }
+.doc caption { caption-side: bottom; padding-top: 10px; color: var(--ink-2); font-size: 15px; text-align: left; }
+
+/* Related reading at the foot of a content page */
+.more { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 22px; }
+.more h2 { font-size: 20px; margin-top: 0; }
+.more ul { list-style: none; padding: 0; margin: 0; }
+.more li { margin: 9px 0; }
